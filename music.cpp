@@ -10,11 +10,12 @@ char* Music::getArtist() const {
   return artist;
 }
 
-double Music::getDuration const {
+double Music::getDuration() const {
   return duration;
 }
 
-Music::Music(char* _title, unsigned int _year, char* _publisher, char* _artist, double _duration) : DigitalMedia(char* _title, unsigned int _year) {
+Music::Music(char* _title, unsigned int _year, char* _publisher, char* _artist, double _duration)
+  : DigitalMedia(_title, _year) {
   size_t len1 = std::strlen(_publisher);
   publisher = new char [len1 + 1];
   std::strcpy(publisher, _publisher);
@@ -27,6 +28,6 @@ Music::Music(char* _title, unsigned int _year, char* _publisher, char* _artist, 
 }
 
 Music::~Music() {
-  delete publisher;
-  delete artist;
+  delete[] publisher;
+  delete[] artist;
 }

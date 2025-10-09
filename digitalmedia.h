@@ -6,15 +6,14 @@
 class DigitalMedia {
 
 protected:
-    char* title;
-    unsigned int year;
+  char* title;
+  unsigned int year;
     
 public:
-  /* Main class functions */
   int getYear() const;
   char* getTitle() const;
 
-  DigitalMedia(const char* _title, const unsigned int _year);
+  DigitalMedia(char* _title, unsigned int _year);
   virtual ~DigitalMedia();
 };
 

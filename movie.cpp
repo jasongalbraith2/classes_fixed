@@ -1,3 +1,4 @@
+#include "digitalmedia.h"
 #include "movie.h"
 #include <cstring>
 
@@ -9,7 +10,8 @@ double Movie::getDuration() const {
   return duration;
 }
 
-Movie::Movie(char* _title, unsigned int _year, char* _director, double _duration) : DigitalMedia(char* _title, unsigned int _year) {
+Movie::Movie(char* _title, unsigned int _year, char* _director, double _duration)
+  : DigitalMedia(_title, _year) {
   size_t len = std::strlen(_director);
   director = new char [len + 1];
   std::strcpy(director, _director);
@@ -17,6 +19,6 @@ Movie::Movie(char* _title, unsigned int _year, char* _director, double _duration
   duration = _duration;
 }
 
-virtual Movie::~Movie() {
-  delete director;
+Movie::~Movie() {
+  delete[] director;
 }

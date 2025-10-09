@@ -1,6 +1,7 @@
 #ifndef MUSIC_H
 #define MUSIC_H
 
+#include <cstring>
 #include "digitalmedia.h"
 
 class Music : public DigitalMedia {
@@ -16,7 +17,7 @@ public:
   double getDuration() const;
   
   Music(char* _title, unsigned int _year, char* _publisher, char* _artist, double _duration);
-  ~Music();
+  virtual ~Music();
 };
 
 #endif
